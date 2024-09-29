@@ -28,12 +28,12 @@ run:
 	$(GOBUILD) -o $(BINARY_NAME) -v ./cmd && ./$(BINARY_NAME)
 
 docker-build-all:
-	docker buildx build --platform linux/amd64,linux/arm64 -t goatnetwork/goat-relayer:latest --push .
+	docker buildx build --platform linux/amd64,linux/arm64 -t anvztor/relayer:latest --push .
 
 docker-build:
-	docker buildx build --platform linux/amd64 -t goatnetwork/goat-relayer:latest --load .
+	docker buildx build --platform linux/amd64 -t anvztor/relayer:latest --load .
 
 docker-build-x:
-	docker buildx build --platform linux/arm64 -t goatnetwork/goat-relayer:latest --load .
+	docker buildx build --platform linux/arm64 -t anvztor/relayer:latest --load .
 
 .PHONY: all build clean test deps run docker-build
